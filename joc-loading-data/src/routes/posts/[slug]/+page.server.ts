@@ -3,8 +3,9 @@ import db from '$lib/database';
 
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ params }) => {
-	console.log(params);
+export const load: PageServerLoad = async ({ params, parent }) => {
+	const parentData = await parent();
+	console.log(parentData);
 
 	const post = await db.post.findUnique({
 		where: {

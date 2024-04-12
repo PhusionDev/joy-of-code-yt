@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import '../app.css';
-	import type { LayoutData } from './$types';
-
-	export let data: LayoutData;
 </script>
+
+<svelte:head>
+	<title>{$page.data.post?.title}</title>
+</svelte:head>
 
 <nav>
 	<ul>
